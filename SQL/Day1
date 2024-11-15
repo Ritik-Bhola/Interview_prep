@@ -60,5 +60,109 @@ MAX(column)	-- Finds the largest numerical value in the specified column for all
 AVG(column)	-- Finds the average numerical value in the specified column for all rows in the group.
 SUM(column)	-- Finds the sum of all numerical values in the specified column for the rows in the group.
 
+13. Grouped aggregate functions
 
+SELECT AGG_FUNC(column_or_expression) AS aggregate_description, …
+FROM mytable
+WHERE constraint_expression
+GROUP BY column;
 
+14. Select query with HAVING constraint
+SELECT group_by_column, AGG_FUNC(column_expression) AS aggregate_result_alias, …
+FROM mytable
+WHERE condition
+GROUP BY column
+HAVING group_condition;
+
+15. Complete SELECT query
+SELECT DISTINCT column, AGG_FUNC(column_or_expression), …
+FROM mytable
+    JOIN another_table
+      ON mytable.column = another_table.column
+    WHERE constraint_expression
+    GROUP BY column
+    HAVING constraint_expression
+    ORDER BY column ASC/DESC
+    LIMIT count OFFSET COUNT;
+
+Inserting rows
+
+16. Insert statement with values for all columns
+INSERT INTO mytable
+VALUES (value_or_expr, another_value_or_expr, …),
+       (value_or_expr_2, another_value_or_expr_2, …),
+       …;
+17. Insert statement with specific columns
+INSERT INTO mytable
+(column, another_column, …)
+VALUES (value_or_expr, another_value_or_expr, …),
+      (value_or_expr_2, another_value_or_expr_2, …),
+      …;
+
+Updating rows
+
+18. Update statement with values
+UPDATE mytable
+SET column = value_or_expr, 
+    other_column = another_value_or_expr, 
+    …
+WHERE condition;
+
+Deleting rows
+
+19. Delete statement with condition
+DELETE FROM mytable
+WHERE condition;
+
+Creating tables
+
+20. Creating tables
+CREATE TABLE IF NOT EXISTS mytable (
+    column DataType TableConstraint DEFAULT default_value,
+    another_column DataType TableConstraint DEFAULT default_value,
+    …
+);
+
+21. Table data types
+
+Data type	Description
+INTEGER, BOOLEAN -- The integer datatypes can store whole integer values like the count of a number or an age. In some implementations, the boolean value is just represented as an integer value of just 0 or 1.
+FLOAT, DOUBLE, REAL	T-- he floating point datatypes can store more precise numerical data like measurements or fractional values. Different types can be used depending on the floating point precision required for that value.
+CHARACTER(num_chars), VARCHAR(num_chars), TEXT	-- The text based datatypes can store strings and text in all sorts of locales. The distinction between the various types generally amount to underlaying efficiency of the database when working with these columns.
+                                                    Both the CHARACTER and VARCHAR (variable character) types are specified with the max number of characters that they can store (longer values may be truncated), so can be more efficient to store and query with big tables.
+DATE, DATETIME	-- SQL can also store date and time stamps to keep track of time series and event data. They can be tricky to work with especially when manipulating data across timezones.
+BLOB	-- Finally, SQL can store binary data in blobs right in the database. These values are often opaque to the database, so you usually have to store them with the right metadata to requery them.
+
+22. Table constraints
+
+Constraint	Description
+PRIMARY KEY	-- This means that the values in this column are unique, and each value can be used to identify a single row in this table.
+AUTOINCREMENT	-- For integer values, this means that the value is automatically filled in and incremented with each row insertion. Not supported in all databases.
+UNIQUE	-- This means that the values in this column have to be unique, so you can't insert another row with the same value in this column as another row in the table. Differs from the `PRIMARY KEY` in that it doesn't have to be a key for a row in the table.
+NOT NULL	-- This means that the inserted value can not be `NULL`.
+CHECK (expression)	-- This allows you to run a more complex expression to test whether the values inserted are valid. For example, you can check that values are positive, or greater than a specific size, or start with a certain prefix, etc.
+FOREIGN KEY	-- This is a consistency check which ensures that each value in this column corresponds to another value in a column in another table.
+
+For example, if there are two tables, one listing all Employees by ID, and another listing their payroll information, the `FOREIGN KEY` can ensure that every row in the payroll table corresponds to a valid employee in the master Employee list.
+
+23. Select query with set operators
+SELECT column, another_column
+   FROM mytable
+UNION / UNION ALL / INTERSECT / EXCEPT
+SELECT other_column, yet_another_column
+   FROM another_table
+ORDER BY column DESC
+LIMIT n;
+
+24. Altering table to add new column(s)
+ALTER TABLE mytable
+ADD column DataType OptionalTableConstraint 
+    DEFAULT default_value;
+
+25. Altering table to remove column(s)
+ALTER TABLE mytable
+DROP column_to_be_deleted;
+
+26. Altering table name
+ALTER TABLE mytable
+RENAME TO new_table_name;
