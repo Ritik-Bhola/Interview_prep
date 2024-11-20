@@ -1,1 +1,72 @@
+1. A shell script is a computer program designed to be run by the Unix/Linux shell which could be one of the following:
+The Bourne Shell
+The C Shell
+The Korn Shell
+The GNU Bourne-Again Shell
+
+A shell is a command-line interpreter and typical operations performed by shell scripts include file manipulation, program execution, and printing text.
+Shell scripts and functions are both interpreted. This means they are not compiled.
+
+2. How to determine Shell => echo $SHELL
+
+3. Shell Comments --
+You can put your comments in your script as follows −
+#!/bin/bash
+
+# Script follows here:
+pwd
+ls
+
+Save the above content and make the script executable −
+$chmod +x test.sh
+
+The shell script is now ready to be executed −
+$./test.sh
+
+Note − To execute a program available in the current directory, use ./program_name
+
+4. Variable Names --
+The name of a variable can contain only letters (a to z or A to Z), numbers ( 0 to 9) or the underscore character ( _).
+
+Defining Variables --
+variable_name=variable_value
+
+Accessing Values --
+To access the value stored in a variable, prefix its name with the dollar sign ($) −
+
+For example, the following script will access the value of defined variable NAME and print it on STDOUT −
+#!/bin/sh
+
+NAME="Ritik"
+echo $NAME
+
+Read-only Variables --
+Shell provides a way to mark variables as read-only by using the read-only command. After a variable is marked read-only, its value cannot be changed.
+
+For example, the following script generates an error while trying to change the value of NAME −
+
+#!/bin/sh
+
+NAME="Ritik"
+readonly NAME
+NAME="xyz"
+
+The above script will generate the following result −
+/bin/sh: NAME: This variable is read only.
+
+Unsetting Variables --
+Unsetting or deleting a variable directs the shell to remove the variable from the list of variables that it tracks. Once you unset a variable, you cannot access the stored value in the variable.
+unset variable_name
+
+The above command unsets the value of a defined variable. Here is a simple example that demonstrates how the command works −
+#!/bin/sh
+
+NAME="Ritik"
+unset NAME
+echo $NAME
+
+The above example does not print anything. You cannot use the unset command to unset variables that are marked readonly.
+
+
+
 
