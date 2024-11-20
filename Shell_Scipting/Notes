@@ -130,6 +130,27 @@ ${array_name[*]}
 ${array_name[@]}
 echo "Second Index: ${NAME[1]}"
 
+6. Basic Operators --
+
+Arithmetic Operators
+Relational Operators
+Boolean Operators
+String Operators
+File Test Operators
+
+Bourne shell didn't originally have any mechanism to perform simple arithmetic operations but it uses external programs, either awk or expr.
+
+The following example shows how to add two numbers −
+
+#!/bin/sh
+
+val=`expr 2 + 2`
+echo "Total value : $val"
+
+The above script will generate the following result −
+Total value : 4
+
+7. 
 
 
 
