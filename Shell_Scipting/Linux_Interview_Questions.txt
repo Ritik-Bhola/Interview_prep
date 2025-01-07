@@ -1,0 +1,1119 @@
+Linux Basics 
+
+1. What is the use of echo command? 
+
+The echo command in Linux is used to display a line of text or string on the terminal. It's commonly used for: 
+
+Displaying simple text. 
+
+Outputting the value of shell variables. 
+
+Writing text into files using redirection. 
+
+Examples: 
+
+Display a message: 
+
+ 
+
+ 
+
+echo Hello, World! 
+ 
+
+This prints "Hello, World!" to the terminal. 
+
+Display the value of a variable: 
+
+ 
+
+ 
+
+MY_VAR="Linux Basics" 
+echo $MY_VAR 
+ 
+
+This prints the value of MY_VAR, which is "Linux Basics". 
+
+Write text to a file: 
+
+ 
+
+ 
+
+echo "This is a new line" > example.txt 
+ 
+
+This writes "This is a new line" to example.txt. 
+
+ 
+
+2. How to check the computer name or hostname in Linux? 
+
+The hostname command displays the current computer name or hostname. 
+
+Command: 
+
+ 
+
+ 
+
+hostname 
+ 
+
+Example: Running hostname might return something like: 
+
+text 
+
+ 
+
+my-computer 
+ 
+
+You can also use: 
+
+ 
+
+ 
+
+cat /etc/hostname 
+ 
+
+This command reads the hostname from the hostname file. 
+
+ 
+
+3. How to check the current user in Linux terminal? 
+
+The whoami command shows the username of the current user. 
+
+Command: 
+
+ 
+
+ 
+
+whoami 
+ 
+
+Example: The output might be: 
+
+text 
+
+ 
+
+user1 
+ 
+
+Alternatively, you can use: 
+
+ 
+
+ 
+
+echo $USER 
+ 
+
+ 
+
+4. How to check your current path/directory you are working in? 
+
+The pwd (print working directory) command displays the full pathname of the current working directory. 
+
+Command: 
+
+ 
+
+ 
+
+pwd 
+ 
+
+Example: 
+
+text 
+
+ 
+
+/home/user1 
+ 
+
+ 
+
+5. Explain the difference between relative and absolute path. 
+
+Absolute Path: Specifies the complete path from the root directory (/). Example: /home/user1/documents/file.txt points directly from the root. 
+
+Relative Path: Specifies the path relative to the current directory. Example: If you are in /home/user1, using documents/file.txt navigates from the current location. 
+
+ 
+
+6. Which command to be used to create a file in Linux? 
+
+Use the touch command to create an empty file or update the timestamp of an existing file. 
+
+Command: 
+
+ 
+
+ 
+
+touch filename.txt 
+ 
+
+Example: 
+
+ 
+
+ 
+
+touch newfile.txt 
+ 
+
+This creates a file named newfile.txt. 
+
+ 
+
+7. How will you edit an existing file on a Linux server? 
+
+You can use text editors like nano, vi, or vim to edit files. 
+
+Commands: 
+
+Open a file with nano: 
+
+ 
+
+ 
+
+nano filename.txt 
+ 
+
+Open a file with vi: 
+
+ 
+
+ 
+
+vi filename.txt 
+ 
+
+Example: 
+
+ 
+
+ 
+
+nano example.txt 
+ 
+
+This opens example.txt in the nano editor. 
+
+ 
+
+8. How to rename a file in Linux? 
+
+Use the mv command to rename files. 
+
+Command: 
+
+ 
+
+ 
+
+mv oldname.txt newname.txt 
+ 
+
+Example: 
+
+ 
+
+ 
+
+mv file1.txt file2.txt 
+ 
+
+Renames file1.txt to file2.txt. 
+
+ 
+
+9. How to search for a string in a file? 
+
+Use the grep command to search for specific strings within a file. 
+
+Command: 
+
+ 
+
+ 
+
+grep "search-string" filename.txt 
+ 
+
+Example: 
+
+ 
+
+ 
+
+grep "Linux" file.txt 
+ 
+
+This searches for the word "Linux" in file.txt. 
+
+ 
+
+10. Difference between grep and egrep? 
+
+grep: Uses basic regular expressions. 
+
+egrep: Uses extended regular expressions (faster and more powerful). 
+
+Commands: 
+
+grep "pattern" filename.txt 
+
+egrep "pattern" filename.txt 
+
+Example: 
+
+ 
+
+ 
+
+grep "error" logs.txt 
+egrep "error|warning" logs.txt 
+ 
+
+ 
+
+11. How can you read a file without using cat command? 
+
+You can use commands like less, more, or tail. 
+
+Commands: 
+
+Using less: 
+
+ 
+
+ 
+
+less filename.txt 
+ 
+
+Using more: 
+
+ 
+
+ 
+
+more filename.txt 
+ 
+
+Using tail: 
+
+ 
+
+ 
+
+tail filename.txt 
+ 
+
+ 
+
+12. What is the advantage of using less command? 
+
+The less command allows you to view large files one page at a time. You can scroll up and down, unlike cat, which displays the whole file at once. 
+
+Command: 
+
+ 
+
+ 
+
+less filename.txt 
+ 
+
+ 
+
+13. How to check a file's permission? 
+
+Use the ls -l command to list files with their permissions. 
+
+Command: 
+
+ 
+
+ 
+
+ls -l filename.txt 
+ 
+
+Example: 
+
+ 
+
+ 
+
+ls -l file.txt 
+ 
+
+Output: 
+
+text 
+
+ 
+
+-rw-r--r-- 1 user user 1234 Jan 1 12:34 file.txt 
+ 
+
+ 
+
+14. How to check the IP of your Linux server? 
+
+Use the ip addr show command. 
+
+Command: 
+
+ 
+
+ 
+
+ip addr show 
+ 
+
+Example: 
+
+ 
+
+ 
+
+ip addr show eth0 
+ 
+
+Displays the IP address for eth0. 
+
+ 
+
+15. How to read the top 5 lines in a file? 
+
+Use the head command with the -n option. 
+
+Command: 
+
+ 
+
+ 
+
+head -n 5 filename.txt 
+ 
+
+Example: 
+
+ 
+
+ 
+
+head -n 5 file.txt 
+ 
+
+ 
+
+16. How to read the last 5 lines in a file? 
+
+Use the tail command with the -n option. 
+
+Command: 
+
+ 
+
+ 
+
+tail -n 5 filename.txt 
+ 
+
+Example: 
+
+ 
+
+ 
+
+tail -n 5 file.txt 
+ 
+
+ 
+
+17. How to list hidden files? 
+
+Use the ls -a command to display all files, including hidden ones (those starting with .). 
+
+Command: 
+
+ 
+
+ 
+
+ls -a 
+ 
+
+ 
+
+18. How to see all the recently used commands? 
+
+Use the history command to display a list of recently executed commands. 
+
+Command: 
+
+ 
+
+ 
+
+history 
+ 
+
+ 
+
+19. What is root? 
+
+The root is the superuser account in Linux with full administrative privileges, allowing control over the entire system. 
+
+ 
+
+20. What is inode and how to find it for a file? 
+
+An inode stores metadata about a file, such as permissions, owner, and file size. 
+
+Command: 
+
+ 
+
+ 
+
+ls -i filename.txt 
+ 
+
+Example: 
+
+ 
+
+ 
+
+ls -i file.txt 
+ 
+
+ 
+
+21. Which command can you use for finding files on a Linux system? 
+
+Use the find command. 
+
+Command: 
+
+ 
+
+ 
+
+find /path -name "filename" 
+ 
+
+Example: 
+
+ 
+
+ 
+
+find /home -name "*.txt" 
+ 
+
+ 
+
+22. Command for counting words and lines? 
+
+Use the wc command. 
+
+Command: 
+
+ 
+
+ 
+
+wc filename.txt 
+ 
+
+Example: 
+
+ 
+
+ 
+
+wc -l filename.txt 
+wc -w filename.txt 
+ 
+
+ 
+
+23. How can you combine two commands? or What is pipe used for? 
+
+Use the pipe (|) to pass the output of one command as input to another. 
+
+Command: 
+
+ 
+
+ 
+
+command1 | command2 
+ 
+
+Example: 
+
+ 
+
+ 
+
+ls -l | grep "search-string" 
+ 
+
+ 
+
+24. How to view the difference between two files? 
+
+Use the diff command. 
+
+Command: 
+
+ 
+
+ 
+
+diff file1.txt file2.txt 
+ 
+
+Example: 
+
+ 
+
+ 
+
+diff oldfile.txt newfile.txt 
+ 
+
+ 
+
+25. What is the use of the shred command? 
+
+The shred command securely deletes files, making data recovery difficult. 
+
+Command: 
+
+ 
+
+ 
+
+shred -u filename.txt 
+ 
+
+ 
+
+26. How to check system architecture info? 
+
+dmidecode: 
+
+ 
+
+ 
+
+sudo dmidecode | grep -i architecture 
+ 
+
+lscpu: 
+
+ 
+
+ 
+
+lscpu 
+ 
+
+ 
+
+27. How to combine two files? 
+
+Use the cat command to concatenate files. 
+
+Command: 
+
+ 
+
+ 
+
+cat file1.txt file2.txt > combinedfile.txt 
+ 
+
+ 
+
+28. How can you find the type of file? 
+
+Use the file command. 
+
+Command: 
+
+ 
+
+ 
+
+file filename.txt 
+ 
+
+ 
+
+29. How to sort the content of a file? 
+
+Use the sort command. 
+
+Command: 
+
+ 
+
+ 
+
+sort filename.txt 
+ 
+
+ 
+
+30. Different ways to access a Linux server remotely? 
+
+From a Windows machine, you can use: 
+
+SSH: Using tools like PuTTY or the ssh command. 
+
+RDP: Remote Desktop Protocol. 
+
+VNC: Virtual Network Computing. 
+
+ 
+
+File Permissions 
+
+1. What are different types of permissions for a file in Linux? 
+
+Read (r): View the contents of the file. 
+
+Write (w): Modify the file. 
+
+Execute (x): Run the file as a program. 
+
+ 
+
+2. How to check the permissions given to a file? 
+
+Use the ls -l command. 
+
+Command: 
+
+ 
+
+ 
+
+ls -l filename.txt 
+ 
+
+ 
+
+3. Which permission allows a user to run an executable file (script)? 
+
+The execute (x) permission allows running a file as a program. 
+
+ 
+
+Redirection 
+
+1. How to write the output of a command into a file? 
+
+Use the > operator to redirect output. 
+
+Command: 
+
+ 
+
+ 
+
+command > output.txt 
+ 
+
+ 
+
+2. How to write something in a file without deleting the existing content? 
+
+Use the >> operator to append output. 
+
+Command: 
+
+ 
+
+ 
+
+echo "New content" >> file.txt 
+ 
+
+ 
+
+3. How to redirect an error of a command into a file? 
+
+Use 2> to redirect error output. 
+
+Command: 
+
+ 
+
+ 
+
+command 2> error.txt 
+ 
+
+ 
+
+Automation 
+
+1. How to Automate any task or script? 
+
+Use cron jobs by editing the crontab file. 
+
+Command: 
+
+ 
+
+ 
+
+crontab -e 
+ 
+
+ 
+
+2. How to check scheduled jobs? 
+
+Use the crontab -l command. 
+
+Command: 
+
+ 
+
+ 
+
+crontab -l 
+ 
+
+ 
+
+3. What is the meaning of this cron job? * * * * * 
+
+This cron job runs every minute. 
+
+ 
+
+4. If your cron job didn't work, how would you check? 
+
+Check system time using date. 
+
+Verify crontab entry with crontab -l. 
+
+Check logs in /var/log/syslog or /var/log/messages. 
+
+ 
+
+Services 
+
+1. What is daemon service? 
+
+A daemon is a background process that runs continuously and handles system or service tasks. 
+
+ 
+
+2. How to check if a service is running or not? 
+
+Use the systemctl command. 
+
+Command: 
+
+ 
+
+ 
+
+systemctl status servicename 
+ 
+
+ 
+
+3. How to start/stop any service? 
+
+Start a service: 
+
+ 
+
+ 
+
+systemctl start servicename 
+ 
+
+Stop a service: 
+
+ 
+
+ 
+
+systemctl stop servicename 
+ 
+
+ 
+
+System Monitoring 
+
+1. How to check for free disk space? 
+
+Use the df command with the -h option for human-readable output. 
+
+Command: 
+
+ 
+
+ 
+
+df -h 
+ 
+
+ 
+
+2. How to check the size of a directory's content? 
+
+Use the du command. 
+
+Command: 
+
+ 
+
+ 
+
+du -sh /path/to/directory 
+ 
+
+ 
+
+3. How to check CPU usage for a process? 
+
+Use the top or htop command. 
+
+Command: 
+
+ 
+
+ 
+
+top 
+ 
+
+ 
+
+Process 
+
+1. What is a process in Linux? 
+
+A process is an instance of a running program. Each process has a unique PID (Process ID). 
+
+ 
+
+2. How to check if a process is running or not? 
+
+Use the ps command or pgrep. 
+
+Command: 
+
+ 
+
+ 
+
+ps aux | grep processname 
+ 
+
+ 
+
+3. How to kill a process? 
+
+Use the kill command with the PID. 
+
+Command: 
+
+ 
+
+ 
+
+kill PID 
+ 
+
+ 
+
+4. Difference between kill and kill -9? 
+
+kill: Sends a SIGTERM signal to terminate the process gracefully. 
+
+kill -9: Sends a SIGKILL signal to forcefully terminate the process. 
+
+ 
+
+Networking 
+
+1. How to check if an IP/Server is accessible or not? 
+
+Use the ping command. 
+
+Command: 
+
+ 
+
+ 
+
+ping IP_address 
+ 
+
+ 
+
+2. Which command to use to get info about ports? 
+
+Use netstat or ss. 
+
+Command: 
+
+ 
+
+ 
+
+netstat -tuln 
+ 
+
+ 
+
+3. How to check open ports on a Linux system? 
+
+Use the ss command. 
+
+Command: 
+
+ 
+
+ 
+
+ss -tuln 
+ 
+
+ 
+
+4. How to check network interfaces in Linux? 
+
+Use the ip command. 
+
+Command: 
+
+ 
+
+ 
+
+ip link show 
+ 
+
+ 
+
+5. Difference between Telnet and SSH? 
+
+Telnet: Unsecured protocol, sends data in plain text. 
+
+SSH: Secure protocol, encrypts data for secure communication. 
+
+ 
+
+SSH 
+
+1. Which service should be running on the server to allow you to connect remotely? 
+
+The SSH service (Secure Shell). 
+
+ 
+
+2. What is SSH? 
+
+SSH (Secure Shell) is a protocol for securely accessing remote systems over an encrypted connection. 
+
+ 
+
+3. Why is it called Secure Shell? 
+
+SSH encrypts data, ensuring secure communication over potentially unsecured networks. 
+
+ 
+
+4. What is the default port for SSH? 
+
+The default port for SSH is 22. 
+
+ 
+
+5. Which command is used to access a Linux system from a terminal or another Linux server? 
+
+Use the ssh command. 
+
+Command: 
+
+ 
+
+ 
+
+ssh user@hostname 
+ 
+
+ 
+
+Archive 
+
+1. If you want to transfer a large file (10GB) remotely, what would be the first thing you will do? 
+
+Compress the file using tar or gzip to save bandwidth. 
+
+Command: 
+
+ 
+
+ 
+
+tar -czvf largefile.tar.gz largefile 
+ 
+
+ 
+
+2. Difference between tar, gzip, and gunzip? 
+
+tar: Archives multiple files into one. 
+
+gzip: Compresses files. 
+
+gunzip: Decompresses .gz files. 
+
+Commands: 
+
+Archive and compress: 
+
+ 
+
+ 
+
+tar -czvf archive.tar.gz file1 file2 
+ 
+
+Decompress: 
+
+ 
+
+ 
+
+gunzip archive.tar.gz 
+
+ 
