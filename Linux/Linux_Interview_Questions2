@@ -1,0 +1,790 @@
+What is RHEL Linux stands for? 
+
+RHEL stands for Red Hat Enterprise Linux. It is a commercial Linux distribution developed by Red Hat, aimed at enterprises for its stability, security, and support. RHEL is widely used in production environments, offering long-term support and advanced security features. 
+
+Key Features: 
+
+Long-term support and updates. 
+
+Security patches and compliance. 
+
+Enterprise-grade reliability and performance. 
+
+ 
+
+What is swap space? 
+
+Swap space is a portion of the hard drive designated to simulate extra RAM when physical RAM is full. It allows the system to continue processing by offloading inactive memory pages to disk. 
+
+Usage: 
+
+Prevents out-of-memory errors. 
+
+Helps handle larger workloads without additional RAM. 
+
+Check swap usage: 
+
+ 
+
+ 
+
+free -h 
+ 
+
+Allocate swap space: 
+
+ 
+
+ 
+
+sudo swapon /path/to/swapfile 
+ 
+
+ 
+
+Search a word in a file and replace it in entire file 
+
+The sed command is used to find and replace text in files. The -i option edits the file in place. 
+
+Command: 
+
+ 
+
+ 
+
+sed -i 's/old-word/new-word/g' filename 
+ 
+
+Example: 
+
+ 
+
+ 
+
+sed -i 's/error/fix/g' logfile.txt 
+ 
+
+This replaces every occurrence of "error" with "fix" in logfile.txt. 
+
+ 
+
+What is the use of SCP command? 
+
+SCP (Secure Copy Protocol) is used to securely copy files between local and remote systems over SSH. 
+
+Command to copy file from local to remote: 
+
+ 
+
+ 
+
+scp file.txt user@remote:/remote/path 
+ 
+
+Command to copy file from remote to local: 
+
+ 
+
+ 
+
+scp user@remote:/remote/file.txt /local/path 
+ 
+
+ 
+
+What is the use of FTP command? 
+
+FTP (File Transfer Protocol) is used for transferring files between a client and a server over a network. 
+
+Basic FTP Commands: 
+
+Connect to an FTP server: 
+
+ 
+
+ 
+
+ftp ftp.example.com 
+ 
+
+Upload a file: 
+
+ 
+
+ 
+
+put localfile.txt 
+ 
+
+Download a file: 
+
+ 
+
+ 
+
+get remotefile.txt 
+ 
+
+ 
+
+What is alias and how to set up? 
+
+An alias creates a shortcut for long or complex commands. 
+
+Command to create an alias: 
+
+ 
+
+ 
+
+alias shortname='command' 
+ 
+
+Example: 
+
+ 
+
+ 
+
+alias ll='ls -la' 
+ 
+
+To make it permanent, add the alias to your ~/.rc or ~/._profile. 
+
+ 
+
+Difference between upgrade and update system 
+
+Update: Refreshes the list of available packages and updates their versions. 
+
+ 
+
+ 
+
+sudo apt update 
+ 
+
+Upgrade: Installs the latest versions of packages and may involve changing the current package set. 
+
+ 
+
+ 
+
+sudo apt upgrade 
+ 
+
+Dist-Upgrade (Debian/Ubuntu): 
+
+ 
+
+ 
+
+sudo apt dist-upgrade 
+ 
+
+This command handles package dependencies more intelligently, sometimes removing obsolete packages. 
+
+ 
+
+Name default ports used for DNS, SMTP, FTP, SSH, DHCP, and Squid 
+
+DNS: 53 (UDP/TCP) 
+
+SMTP: 25 (TCP) 
+
+FTP: 21 (TCP) 
+
+SSH: 22 (TCP) 
+
+DHCP: 67/68 (UDP) 
+
+Squid (proxy): 3128 (TCP) 
+
+ 
+
+How to check if a package is installed or not? 
+
+Debian-based systems: 
+
+ 
+
+ 
+
+dpkg -l | grep package-name 
+ 
+
+Red Hat-based systems: 
+
+ 
+
+ 
+
+rpm -q package-name 
+ 
+
+Example: 
+
+ 
+
+ 
+
+dpkg -l | grep nginx 
+ 
+
+ 
+
+Which of the following commands sends exactly three ping packets to google.com? 
+
+Use the ping command with the -c option to specify the count. 
+
+Command: 
+
+ 
+
+ 
+
+ping -c 3 google.com 
+ 
+
+ 
+
+Which file contains a list of group names and GIDs? 
+
+The /etc/group file contains group information. 
+
+Command to view: 
+
+ 
+
+ 
+
+cat /etc/group 
+ 
+
+Example Output: 
+
+text 
+
+ 
+
+root:x:0: 
+daemon:x:1: 
+ 
+
+ 
+
+Which of the following contains the value of the exit status of the previously executed command? 
+
+The variable $? stores the exit status of the last executed command. 
+
+Example: 
+
+ 
+
+ 
+
+echo $? 
+ 
+
+0: Success 
+
+Non-zero: Failure 
+
+ 
+
+Which command displays the number and type of processors used by a Linux system? 
+
+Use the lscpu command. 
+
+Command: 
+
+ 
+
+ 
+
+lscpu 
+ 
+
+Example Output: 
+
+text 
+
+ 
+
+CPU(s):              4 
+Model name:          Intel(R) Core(TM) i5-8250U CPU 
+ 
+
+ 
+
+Which command should you use to get a list of connected USB devices? 
+
+Use the lsusb command. 
+
+Command: 
+
+ 
+
+ 
+
+lsusb 
+ 
+
+Example Output: 
+
+text 
+
+ 
+
+Bus 001 Device 002: ID 8087:0029 Intel Corp. 
+ 
+
+ 
+
+Which environment variable is used as the default argument for the "cd" command when no directory is provided? 
+
+The HOME environment variable is used by default. 
+
+Command: 
+
+ 
+
+ 
+
+cd 
+ 
+
+This takes you to the directory defined by HOME. 
+
+ 
+
+True or False: A command following a semicolon will be executed no matter the exit status of the preceding command. 
+
+True. Commands separated by a semicolon are executed sequentially. 
+
+Example: 
+
+ 
+
+ 
+
+mkdir testdir ; cd testdir 
+ 
+
+cd testdir executes regardless of the success of mkdir. 
+
+ 
+
+What are the valid values of the exit status? 
+
+0: Command executed successfully. 
+
+Non-zero: Command failed. Each number indicates a different error. 
+
+ 
+
+According to the FHS, what is the correct directory for log files? 
+
+According to the Filesystem Hierarchy Standard (FHS), log files are stored in /var/log. 
+
+ 
+
+What port must be open to ping a given host? 
+
+Ping uses the ICMP protocol, which operates at the network layer and does not use a port. 
+
+ 
+
+Can you give some names of Linux distributions? 
+
+Popular Linux distributions include: 
+
+Ubuntu 
+
+Fedora 
+
+Debian 
+
+CentOS 
+
+Red Hat Enterprise Linux (RHEL) 
+
+Arch Linux 
+
+SUSE 
+
+ 
+
+What is kernel? 
+
+The kernel is the core component of an operating system that manages hardware resources and provides services to applications. It handles memory management, process scheduling, device control, and system calls. 
+
+ 
+
+How will you transfer a file from a Linux server to your Windows OS and vice versa? 
+
+Use SCP or SFTP for secure file transfer: 
+
+From Linux to Windows: 
+
+ 
+
+ 
+
+scp file.txt user@windows_ip:/path/to/destination 
+ 
+
+From Windows to Linux: 
+
+ 
+
+ 
+
+scp user@linux_ip:/path/to/file /local/destination 
+ 
+
+ 
+
+How you can split a file into two? 
+
+Use the split command to divide a file into smaller parts. 
+
+Command: 
+
+ 
+
+ 
+
+split -l 1000 largefile part_ 
+ 
+
+This splits largefile into chunks of 1000 lines each, naming them part_aa, part_ab, etc. 
+
+ 
+
+How you can get the unique values from a list? 
+
+Use the sort and uniq commands together. 
+
+Command: 
+
+ 
+
+ 
+
+sort filename | uniq 
+ 
+
+Example: 
+
+ 
+
+ 
+
+sort data.txt | uniq 
+ 
+
+ 
+
+Using VI editor, how will you edit and save a file? 
+
+Open file: vi filename 
+
+Insert mode: Press i 
+
+Save and exit: Press Esc, type :wq, and press Enter. 
+
+ 
+
+What is the difference between find and locate command? 
+
+find: Searches in real-time across the filesystem. 
+
+ 
+
+ 
+
+find /path -name filename 
+ 
+
+locate: Uses a pre-built index, making it faster but requires regular updates (updatedb). 
+
+ 
+
+ 
+
+locate filename 
+ 
+
+ 
+
+What is TEE Command used for? 
+
+The tee command reads input and writes it to both standard output and one or more files. 
+
+Command: 
+
+ 
+
+ 
+
+command | tee filename 
+ 
+
+Example: 
+
+ 
+
+ 
+
+echo "Hello World" | tee file.txt 
+ 
+
+ 
+
+What is Xargs used for? 
+
+xargs constructs argument lists and passes them to other commands. 
+
+Command: 
+
+ 
+
+ 
+
+echo "file1 file2" | xargs rm 
+ 
+
+ 
+
+How you can find the number of files and folders in a directory? 
+
+Use find and wc commands: 
+
+Files: 
+
+ 
+
+ 
+
+find /path -type f | wc -l 
+ 
+
+Directories: 
+
+ 
+
+ 
+
+find /path -type d | wc -l 
+ 
+
+ 
+
+I want to read only line 25 to 30th Line, how will you do it? 
+
+Use the sed command to print specific lines. 
+
+Command: 
+
+ 
+
+ 
+
+sed -n '25,30p' filename 
+ 
+
+ 
+
+What is the use of Tar command? 
+
+The tar command creates and extracts archives. 
+
+Command to create archive: 
+
+ 
+
+ 
+
+tar -cvf archive.tar file1 file2 
+ 
+
+Command to extract archive: 
+
+ 
+
+ 
+
+tar -xvf archive.tar 
+ 
+
+ 
+
+How to redirect both standard output and error to a file? 
+
+Use &> to redirect both standard output and error. 
+
+Command: 
+
+ 
+
+ 
+
+command &> outputfile 
+ 
+
+ 
+
+Name some commands for DNS resolution? 
+
+nslookup: Query DNS servers. 
+
+ 
+
+ 
+
+nslookup example.com 
+ 
+
+dig: Query DNS information. 
+
+ 
+
+ 
+
+dig example.com 
+ 
+
+host: DNS lookup utility. 
+
+ 
+
+ 
+
+host example.com 
+ 
+
+ 
+
+Automation 
+
+What is use of At command? 
+
+The at command schedules one-time tasks for execution at a later time. 
+
+Command: 
+
+ 
+
+ 
+
+at 2pm 
+ 
+
+Which service is used by At command? 
+
+The atd (At Daemon) service handles scheduled at jobs. 
+
+Command to check: 
+
+ 
+
+ 
+
+systemctl status atd 
+ 
+
+ 
+
+Permissions 
+
+Which command syntax is correct if you want to assign read-only permission to everyone and write permission to the owner of the file? 
+
+Use the chmod command. 
+
+Command: 
+
+ 
+
+ 
+
+chmod 644 filename 
+ 
+
+Which command changes the group ownership of the "/var/www" directory to the "apache" group? 
+
+Use the chgrp command. 
+
+Command: 
+
+ 
+
+ 
+
+chgrp apache /var/www 
+ 
+
+What is chmod 777 filename? 
+
+Grants read, write, and execute permissions to everyone (owner, group, others). 
+
+What is ACL and its advantage? 
+
+Access Control List (ACL) provides more granular permissions beyond the traditional owner, group, and others. 
+
+Command to set ACL: 
+
+ 
+
+ 
+
+setfacl -m u:user:rwx filename 
+ 
+
+ 
+
+Process 
+
+What command allows you to display all the process IDs of the running nginx processes? 
+
+Use pgrep. 
+
+Command: 
+
+ 
+
+ 
+
+pgrep nginx 
+ 
+
+What is nice value of a process? 
+
+The nice value determines the priority of a process. Lower values mean higher priority. 
+
+How to check the nice value of a process? 
+
+Use the ps command. 
+
+Command: 
+
+ 
+
+ 
+
+ps -eo pid,comm,nice 
+ 
+
+What command can be used to check the %CPU? 
+
+Use top or htop. 
+
+Command: 
+
+ 
+
+ 
+
+top 
+
+ 
