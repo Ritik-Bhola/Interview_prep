@@ -1,3 +1,5 @@
+More notes - https://lemon-nigella-ca3.notion.site/Comprehensive-SQL-Guide-for-Freshers-and-Intermediate-Learners-177577249bdc8030a1c9decf324811fa
+
 1. Select query for a specific columns => SELECT column, another_column, … FROM mytable;
 2. Select query for all columns => SELECT * FROM mytable;
 3. Select query with constraints => SELECT column, another_column, … FROM mytable WHERE condition     AND/OR another_condition     AND/OR …;
