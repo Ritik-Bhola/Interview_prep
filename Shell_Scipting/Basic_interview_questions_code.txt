@@ -1,30 +1,17 @@
 🔹 Question 1: How do you declare a variable in a shell script?
-🔹 Question 2: How do you make a shell script executable?
-🔹 Question 3: How do you pass arguments to a shell script?
-🔹 Question 4: How do you check if a file exists in a shell script?
-🔹 Question 5: How do you write a loop that iterates over a list of items?
-🔹 Question 6: How can you redirect both stdout and stderr to a file?
-🔹 Question 7: How do you schedule a cron job to run a script every day at midnight?
-🔹 Question 8: How do you find and replace text in a file using a shell script?
-🔹 Question 9: How do you read user input in a shell script?
-🔹 Question 10: How do you check the exit status of a command in a script?
-🔹 Question 11: How do you create a function in a shell script?
-🔹 Question 12: How do you append text to a file in a shell script?
-🔹 Question 13: How do you get the current date and time in a shell script?
-🔹 Question 14: How do you handle errors in a shell script?
-🔹 Question 15: How do you parse a CSV file in a shell script?
-
 ################## Question 1 ################## 
 #!/bin/bash
 VARIABLE_NAME="VARIABLE_VALUE
 channel="dgruploads"
 ################################################
 
+🔹 Question 2: How do you make a shell script executable?
 ################## Question 2 ################## 
 chmod +x script.sh
 ./script.sh
 ################################################
 
+🔹 Question 3: How do you pass arguments to a shell script?
 ################## Question 3 ################## 
 #!/bin/bash
 echo "First argument: $1"
@@ -33,6 +20,7 @@ echo "Second argument: $2"
 ./script.sh dgruploads awesome
 ################################################
 
+🔹 Question 4: How do you check if a file exists in a shell script?
 ################## Question 4 ################## 
 #!/bin/bash
 if [ -e /var/www/html/index.html ]; then
@@ -42,6 +30,7 @@ else
 fi
 ################################################
 
+🔹 Question 5: How do you write a loop that iterates over a list of items?
 ################## Question 5 ################## 
 #!/bin/bash
 for item in file1 file2 file3; do
@@ -49,19 +38,23 @@ for item in file1 file2 file3; do
 done
 ################################################
 
+🔹 Question 6: How can you redirect both stdout and stderr to a file?
 ################## Question 6 ################## 
 ls /nonexistent $> output.log
 ################################################
 
+🔹 Question 7: How do you schedule a cron job to run a script every day at midnight?
 ################## Question 7 ################## 
 0 0 * * * /home/ubuntu/script.sh
 ################################################
 
+🔹 Question 8: How do you find and replace text in a file using a shell script?
 ################## Question 8 ################## 
 sed -i 's/oldtext/newtext/g' filename
 sed -i 's/one/ten/g' testfile
 ################################################
 
+🔹 Question 9: How do you read user input in a shell script?
 ################## Question 9 ################## 
 #!/bin/bash
 echo "Enter your name:"
@@ -69,6 +62,7 @@ read name
 echo "Hello $name"
 ################################################
 
+🔹 Question 10: How do you check the exit status of a command in a script?
 ################## Question 10 ################## 
 #!/bin/bash
 ls /home/ubuntu
@@ -79,6 +73,7 @@ else
 fi
 ################################################
 
+🔹 Question 11: How do you create a function in a shell script?
 ################## Question 11 ################## 
 #!/bin/bash
 my_function() {
@@ -87,22 +82,26 @@ my_function() {
 my_function
 ################################################
 
+🔹 Question 12: How do you append text to a file in a shell script?
 ################## Question 12 ################## 
 echo "New data" >> filename
 ################################################
 
+🔹 Question 13: How do you get the current date and time in a shell script?
 ################## Question 13 ################## 
 #!/bin/bash
 current_date=$(date)
 echo $current_date
 ################################################
 
+🔹 Question 14: How do you handle errors in a shell script?
 ################## Question 14 ################## 
 #!/bin/bash
 set -e
 trap 'echo "Error occurred at line $LINENO"' ERR
 ################################################
 
+🔹 Question 15: How do you parse a CSV file in a shell script?
 ################## Question 15 ################## 
 #!/bin/bash
 while IFS=, read -r colume1 colume2 colume3; do
