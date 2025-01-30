@@ -11,7 +11,6 @@ Execute (x): Allows running the file as a program.
 Permissions can be modified with chmod. You can use symbolic mode (e.g., r, w, x) or numeric mode (e.g., 755). 
 
 Symbolic mode: 
-
 chmod u+x file (Adds execute permission for the user) 
 
 chmod g-w file (Removes write permission from the group) 
