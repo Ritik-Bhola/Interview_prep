@@ -10,8 +10,6 @@ Security patches and compliance.
 
 Enterprise-grade reliability and performance. 
 
- 
-
 What is swap space? 
 
 Swap space is a portion of the hard drive designated to simulate extra RAM when physical RAM is full. It allows the system to continue processing by offloading inactive memory pages to disk. 
