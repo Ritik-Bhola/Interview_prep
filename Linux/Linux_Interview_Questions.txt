@@ -12,12 +12,8 @@ Writing text into files using redirection.
 
 Examples: 
 
-Display a message: 
-
+Display a message:
  
-
- 
-
 echo Hello, World! 
  
 
