@@ -74,3 +74,158 @@ Shortcuts
 6. ctrl+r : Type to bring up a recent command 
 7.!! : Repeats the last command 
 8. exit : Logout the current session
+
+Disk Usage Commands:
+1. df [options] : Displays disk space usage for mounted file systems.
+  a. -h : Human-readable format (KB, MB, GB).
+  b. -T : Displays the file system type.
+  c. -a : Includes pseudo, duplicate, and inaccessible file systems.
+  d. -l : Limits output to local file systems only.
+  e. -t [type] : Displays file systems of the specified type.
+  f. -x [type] : Excludes file systems of the specified type.
+2. df -h : Displays disk usage in a human-readable format (KB, MB, GB).
+3. df -T : Shows the type of the file system.
+4. df -a : Includes pseudo, duplicate, and inaccessible file systems.
+5. df -l : Limits output to local file systems only.
+6. df -t ext4 : Shows file systems of the specified type (ext4).
+7. df -x tmpfs : Excludes file systems of the specified type (tmpfs).
+
+Memory Usage Commands:
+1. free [options] : Displays memory usage (free, used, swap, buffer).
+  a. -m : Displays memory in megabytes.
+  b. -g : Displays memory in gigabytes.
+  c. -h : Human-readable format (auto-adjusting units).
+  d. -b : Displays memory in bytes.
+  e. -t : Shows total memory and swap space.
+  f. -s [seconds] : Repeats the memory usage output every specified number of
+seconds.
+2. free -m : Displays memory in megabytes.
+3. free -g : Displays memory in gigabytes.
+4. free -h : Displays memory in a human-readable format.
+5. free -b : Displays memory in bytes.
+6. free -t : Shows total memory and swap space.
+7. free -s [seconds] : Repeats the memory usage output every specified number of
+seconds.
+
+CPU and Process Information Commands:
+1. nproc [options] : Displays the number of processing units (CPUs/cores).
+a. --all : Displays the total number of processing units available.
+b. --core : Displays the number of cores.
+c. --help : Displays help information.
+2. nproc --all : Displays the total number of processing units available.
+3. nproc --core : Displays the number of cores.
+4. nproc --help : Displays help information.
+
+Process Monitoring Commands:
+1. top [options] : Displays real-time system resource usage, including processes and
+memory.
+  a. -d [seconds] : Updates the display every specified number of seconds.
+  b. -n [iterations] : Specifies the number of updates to run.
+  c. -u [user] : Displays processes for a specific user.
+  d. -p [pid] : Displays processes with the specified PID.
+  e. -b : Runs in batch mode (suitable for output redirection).
+  f. -i : Ignores idle and zombie processes.
+2. top -d [seconds] : Updates the display every specified number of seconds.
+3. top -n [iterations] : Specifies the number of updates to run.
+4. top -u [user] : Displays processes for a specific user.
+5. top -p [pid] : Displays processes with the specified PID.
+6. top -b : Runs in batch mode (suitable for output redirection).
+7. top -i : Ignores idle and zombie processes.
+
+Process Status Commands:
+1. ps [options] : Displays information about active processes.
+  a. a : Shows processes associated with a terminal.
+  b. u : Displays processes in a user-oriented format.
+  c. x : Displays processes without a controlling terminal.
+  d. -e : Displays all processes.
+  e. -f : Shows full format information, including PPID.
+2. ps a : Shows processes associated with a terminal.
+3. ps u : Displays processes in a user-oriented format.
+4. ps x : Displays processes without a controlling terminal.
+5. ps -e : Displays all processes.
+6. ps -f : Shows full format information, including PPID.
+
+Text Search and Manipulation Commands:
+1. grep [options] pattern [file...] : Searches for a pattern in files.
+  a. -i : Performs a case-insensitive search.
+  b. -r : Recursively searches files in a directory.
+  c. -v : Inverts the match, showing lines that do not match the pattern.
+  d. -l : Displays only filenames that contain the pattern.
+  e. -n : Shows line numbers for matches.
+  f. -c : Shows the count of matching lines.
+2. grep -i "pattern" file.txt : Performs a case-insensitive search.
+3. grep -r "pattern" /path/to/dir/ : Recursively searches files in a directory.
+4. grep -v "pattern" file.txt : Inverts the match, showing lines that do not match the
+pattern.
+5. grep -l "pattern" * : Displays only filenames that contain the pattern.
+6. grep -n "pattern" file.txt : Shows line numbers for matches.
+7. grep -c "pattern" file.txt : Shows the count of matching lines.
+
+Text Processing Commands:
+1. awk [options] '{print $1}' [file...] : Processes and manipulates text data by fields.
+  a. -F [separator] : Defines a custom field separator.
+  b. NR : Prints the current line number.
+  c. $1, $2, etc. : Refers to specific fields in the input data.
+  d. print : Outputs text or data to the screen.
+2. awk -F, '{print $1}' file.csv : Specifies a custom field delimiter (comma for CSV).
+3. awk '{print NR, $0}' file.txt : Prints the line number and entire line.
+4. awk '{print $1, $3}' file.txt : Prints the first and third columns.
+
+Stream Editing Commands:
+1. sed [options] 's/old/new/g' [file...] : Stream editor for text substitution.
+  a. -i : Modifies the file in place.
+  b. -e : Allows multiple editing commands.
+  c. /pattern/d : Deletes lines matching the pattern.
+  d. -n : Suppresses automatic printing (use p to print).
+2. sed -i 's/old/new/g' file.txt : Modifies the file in place.
+3. sed 's/old/new/1' file.txt : Replaces the first occurrence of "old" with "new".
+4. sed -e 's/old/new/g' -e 's/test/example/g' file.txt : Uses multiple expressions
+(commands).
+5. sed '/pattern/d' file.txt : Deletes lines matching the pattern.
+6. sed -n '/pattern/p' file.txt : Prints lines matching the pattern.
+
+Text Cutting Commands:
+1. cut [options] [file...] : Extracts sections from text input (fields, characters).
+  a. -d [delimiter] : Specifies the delimiter (e.g., comma, space).
+  b. -f [fields] : Specifies which fields to extract.
+  c. -c [range] : Specifies which characters to extract.
+2. cut -d ":" -f 1 file.txt : Cuts the first field separated by a colon.
+3. cut -f 1,3 file.txt : Cuts fields 1 and 3.
+4. cut -c 1-5 file.txt : Cuts characters from position 1 to 5.
+
+Character Translation Commands:
+1. tr [options] [set1] [set2] : Translates or deletes characters from a stream.
+  a. -d : Deletes characters in the first set.
+  b. -s : Squeezes repeated characters.
+2. tr 'a-z' 'A-Z' : Converts lowercase characters to uppercase.
+3. tr -d '[:space:]' : Deletes whitespace characters.
+4. tr -s ' ' ' ' : Squeezes multiple spaces into a single space.
+
+File Download and Fetching Commands:
+1. curl [options] [URL] : Fetches data from a URL or sends data to a URL.
+  a. -O : Downloads the file from the URL.
+  b. -X [method] : Specifies the request method (e.g., GET, POST).
+  c. -I : Fetches the HTTP headers only.
+  d. -d [data] : Sends data with the request (for POST).
+  e. -L : Follows redirects.
+2. curl -O [URL] : Downloads a file from the URL.
+3. curl -X GET [URL] : Performs a GET request to fetch data from the URL.
+4. wget [options] [URL] : Downloads files from the web.
+5. wget -q [URL] : Downloads a file quietly without output.
+
+File Searching Commands:
+1. find [directory] [options] : Searches for files in a directory hierarchy.
+  a. -name [pattern] : Searches for files matching a name pattern.
+  b. -type [type] : Searches for files of a specific type (e.g., file, directory).
+  c. -exec [command] {} \; : Executes a command on the found files.
+  d. -size [size] : Searches for files of a specific size.
+2. find /home -name "*.txt" : Finds all text files in the /home directory.
+3. find / -type f -size +100M : Finds files larger than 100MB.
+4. find /path/to/dir -name "*.log" -exec rm {} \; : Finds and deletes log files.
+
+Signal Handling Commands:
+1. trap [command] [signal] : Specifies a command to execute when receiving a signal.
+  a. SIGINT : Interrupt signal (Ctrl+C).
+  b. SIGTERM : Termination signal.
+2. trap 'echo "Caught signal!"' SIGINT : Prints a message when Ctrl+C (SIGINT) is
+pressed.
