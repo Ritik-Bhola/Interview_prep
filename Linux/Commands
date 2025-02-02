@@ -222,6 +222,8 @@ File Searching Commands:
 2. find /home -name "*.txt" : Finds all text files in the /home directory.
 3. find / -type f -size +100M : Finds files larger than 100MB.
 4. find /path/to/dir -name "*.log" -exec rm {} \; : Finds and deletes log files.
+5. find /path/to/directory -type f -mmin -N : Find files modified in the last N minutes:
+6. find /path/to/directory -type f -mtime -N : Find files modified in the last N days:
 
 Signal Handling Commands:
 1. trap [command] [signal] : Specifies a command to execute when receiving a signal.
